@@ -2,20 +2,20 @@ import axios from 'axios';
 
 import K from "../constants/"
 
-const requestToEditTodo = () => {
+export const requestToEditTodo = () => {
   return {
     type: K.EDIT_TODO_REQUEST
   }
 };
 
-const successfullyEditedTodo = (todo) => {
+export const successfullyEditedTodo = (todo) => {
   return {
     type: K.EDIT_TODO_SUCCESS,
     todo
   }
 };
 
-const failedToEditTodo = (errorMessage) => {
+export const failedToEditTodo = (errorMessage) => {
   return {
     type: K.EDIT_TODO_FAILURE,
     message: errorMessage
@@ -34,7 +34,7 @@ export const editTodo = (id, title) => {
         dispatch(successfullyEditedTodo(response.data))
       },
       (response) => {
-        dispatch(failedToEditTodo(`Error: ${response.message} ${response.status} ${esponse.data}`));
+        dispatch(failedToEditTodo(`Error: ${response.message} ${response.status} ${response.data}`));
       }
     );
   }

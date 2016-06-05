@@ -39,7 +39,7 @@ const todos_data_array = (state=[], action) => {
           created_at: action.todo.created_at,
           updated_at: action.todo.updated_at,
         },
-        ...state.slice(action.todo.id),
+        ...state.slice(itemIndex),
       ];
 
     default:
