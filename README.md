@@ -1,8 +1,16 @@
 ## Redux Todo App with Rails backend
 
 ````
+git clone https://github.com/sandeep45/rails-redux-todo.git
+cd rails-redux-todo
+
+cd app/assets/javascripts/redux-todos/
 npm install
+
+cd ../../../../
 bundle install
+
+rake db:create
 rake db:migrate
 rails s
 ````
